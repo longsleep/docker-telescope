@@ -1,11 +1,8 @@
-FROM node
+FROM node:0.10-slim
 
 ## Base packages
 RUN apt-get update -qq && apt-get upgrade -y -qq
-RUN apt-get install -qq -y curl
-RUN apt-get install -y wget
-######
-#
+RUN apt-get install -qq -y curl wget git
 
 RUN curl https://install.meteor.com/ | sh
 RUN npm install -g meteorite
